@@ -1,0 +1,36 @@
+{
+  "name": "ursa",
+  "version": "0.0.1",
+  "main": "app.js",
+  "license": "MIT",
+  "docker": {
+    "group": "sudhanshuraheja",
+    "name": "ursa",
+    "port": "8080"
+  },
+  "scripts": {
+    "start": "node lib/app.js",
+    "test": "jest --collect-coverage",
+    "coverage": "open ./coverage/lcov-report/index.html",
+    "lint": "eslint **/*.js --fix-dry-run",
+    "build": "docker build -t $npm_package_docker_group/$npm_package_docker_name .",
+    "rmi": "docker rmi $npm_package_docker_group/$npm_package_docker_name",
+    "run": "docker run -p 8080:$npm_package_docker_port -d --name $npm_package_docker_name $npm_package_docker_group/$npm_package_docker_name",
+    "stop": "docker stop $npm_package_docker_name",
+    "rm": "docker rm $npm_package_docker_name"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "jest": "^25.3.0",
+    "prettier": "^2.0.4"
+  }
+}
