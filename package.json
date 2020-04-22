@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node lib/app.js",
+    "start_debug": "node --trace-warnings cli.js",
     "test": "jest --collect-coverage",
     "coverage": "open ./coverage/lcov-report/index.html",
     "lint": "eslint **/*.js --fix-dry-run",
